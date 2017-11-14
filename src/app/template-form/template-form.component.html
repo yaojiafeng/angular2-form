@@ -1,0 +1,28 @@
+<form #myForm="ngForm" (ngSubmit)="createUser(myForm.value,myForm.valid)" novalidate method="post">
+  <div>昵称：<input ngModel required minlength="6" name="nickname" type="text" pattern="[a-zA-Z0-9]+"></div>
+  <div [hidden]="!myForm.form.hasError('required','nickname')">
+    昵称是必填项
+  </div>
+  <div [hidden]="!myForm.form.hasError('minlength','nickname')">
+    昵称的最小长度是6
+  </div>
+  <div>邮箱：<input ngModel name="email" type="email"></div>
+  <div>手机号：<input ngModel mobile name="mobile" type="text"></div>
+  <div [hidden]="!myForm.form.hasError('mobile','mobile')">
+    手机号不合法
+  </div>
+  <div ngModelGroup="passwordInfo" password>
+    <div>密码：<input ngModel required name="password" type="password"></div>
+    <div>确认密码：<input ngModel name="passwordConfirm" type="password"></div>
+  </div>
+  <button type="submit">注册</button>
+</form>
+
+
+
+<!--
+<div>
+  {{myForm.value | json}}
+</div>
+<div>昵称的值是{{myNickName.value}}</div>
+-->
