@@ -1,5 +1,5 @@
 # FormDemo
-##表单练习代码
+## 表单练习代码（模板式表单和响应式表单）
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
